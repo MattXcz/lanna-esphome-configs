@@ -1,0 +1,32 @@
+binary_sensor:
+  - platform: status
+    name: "${node_id}"
+
+  - platform: gpio
+    pin:
+      number: GPIO0
+      mode: INPUT_PULLUP
+      inverted: true
+    name: "Tlačítko ${node_id}"
+    on_press:
+      - switch.toggle: relay
+
+switch:
+  - platform: gpio
+    name: "${node_id} rele"
+    pin: GPIO12
+    id: relay
+  
+  - platform: restart
+    name: "IOT ${node_id} RESTART"
+    
+status_led:
+  pin:
+    number: GPIO13
+    inverted: yes
+
+
+text_sensor:
+  - platform: version
+    name: "${node_id} version"
+    hide_timestamp: True
