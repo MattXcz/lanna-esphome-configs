@@ -9,17 +9,13 @@ esphome:
 
   project:
    name: lanna.sonoff_bacis_r3
-   version: "2.1.1"
+   version: "stable"
 
 wifi:
-  ssid: !secret lanna_wifi
-  password: !secret lanna_pass
-  fast_connect: true
-
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
     ssid: "${node_id} Fallback Hotspot"
-    password: !secret lanna_app_pass
+    password: lanna
     
 captive_portal:
 
@@ -59,11 +55,6 @@ text_sensor:
 dashboard_import:
   package_import_url: github://MattXcz/lanna-esphome-configs/sonoff_basicR3.yaml@latest
 
-
 logger:
 ota:
-  password: !secret lanna_ota_pass
 api:
-  password: !secret lanna_app_pass
-  encryption:
-   key: !secret api_encrypt
