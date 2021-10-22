@@ -57,7 +57,7 @@ text_sensor:
     hide_timestamp: True
 
 dashboard_import:
-  package_import_url: github://MattXcz/lanna-esphome-configs/sonoff_basicR3.yaml@v2.1.1
+  package_import_url: github://MattXcz/lanna-esphome-configs/sonoff_basicR3.yaml@latest
 
 
 logger:
