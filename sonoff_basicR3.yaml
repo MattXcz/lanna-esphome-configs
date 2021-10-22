@@ -1,5 +1,5 @@
 substitutions:
-  node_id: "sonoff_bacis_R3"
+  node_id: "sonoff_bacis_r3"
   
 esphome:
   name: "${node_id}"
