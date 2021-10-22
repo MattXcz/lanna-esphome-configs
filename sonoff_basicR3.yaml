@@ -4,8 +4,9 @@ esphome:
   board: esp8285
 
 substitutions:
-  node_id: "lanna-sw-01"
-
+  node_id: "${name}"
+  name: sonoff_switch
+  
 wifi:
   ssid: !secret lanna_wifi
   password: !secret lanna_pass
@@ -51,7 +52,7 @@ text_sensor:
     name: "${node_id} version"
     hide_timestamp: True
 
-
+logger:
 ota:
   password: !secret lanna_ota_pass
 api:
